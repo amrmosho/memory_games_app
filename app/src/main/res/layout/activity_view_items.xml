@@ -3,12 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
     tools:context="app.memory_games_app.view_items">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        style="@style/header"
+
+
+        >
+
+
+        <ImageButton
+            android:id="@+id/home"
+            style="@style/home_bt"
+            android:onClick="goHome" />
+
+        <TextView
+            android:id="@+id/v_layout_title"
+            style="@style/subtitle"
+            android:text="@string/mem_number" />
+
+
+
+
+    </RelativeLayout>
 
     <RelativeLayout
         style="@style/home_main"
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
 
 
         <RelativeLayout
@@ -16,30 +45,29 @@
             style="@style/light_panel"
             android:layout_width="match_parent"
 
+            android:layout_height="180dp"
+
+
             >
 
-
-            <TextView
-                android:id="@+id/welcome_txt"
-                style="@style/subtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/welcome" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/welcome_txt"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo" />
+
+
+            <TextView
+                android:id="@+id/v_fuces_txt"
+                style="@style/subtitlegreen"
+                android:layout_below="@+id/imageView4"
+
+                android:text="@string/fuces" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -53,8 +81,7 @@
             <ImageView
                 android:id="@+id/v_image_data_1"
                 style="@style/data_img_right"
-                android:src="@drawable/image_date_1"
-                />
+                android:src="@drawable/image_date_1" />
 
             <ImageView
                 android:id="@+id/v_image_data_3"
@@ -71,19 +98,17 @@
 
 
         <RelativeLayout
-            style="@style/itempanl"
             android:id="@+id/row2"
+            style="@style/itempanl"
 
             android:layout_width="match_parent"
             android:layout_below="@+id/row1">
 
 
-
             <ImageView
                 android:id="@+id/v_image_data_4"
                 style="@style/data_img_right"
-                android:src="@drawable/numbers_icon"
-                />
+                android:src="@drawable/numbers_icon" />
 
             <ImageView
                 android:id="@+id/v_image_data_5"
@@ -97,32 +122,21 @@
                 android:src="@drawable/numbers_icon" />
 
 
-
-
-
-
-
-
-
         </RelativeLayout>
 
 
-
-
         <RelativeLayout
-            style="@style/itempanl"
-
             android:id="@+id/row3"
+
+            style="@style/itempanl"
             android:layout_width="match_parent"
             android:layout_below="@+id/row2">
-
 
 
             <ImageView
                 android:id="@+id/v_image_data_7"
                 style="@style/data_img_right"
-                android:src="@drawable/numbers_icon"
-                />
+                android:src="@drawable/numbers_icon" />
 
             <ImageView
                 android:id="@+id/v_image_data_8"
@@ -136,20 +150,7 @@
                 android:src="@drawable/numbers_icon" />
 
 
-
-
-
-
-
-
-
         </RelativeLayout>
-
-
-
-
-
-
 
 
         <ImageView
@@ -158,6 +159,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@style/nex_bt"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/row3"
+
+
+            />
 
     </RelativeLayout>
 

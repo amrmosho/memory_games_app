@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">memory_games_app</string>
+    <string name="app_name">العاب ذكرة للجوال</string>
     <string name="mem_number">ذكرة رقمية</string>
     <string name="mem_images">ذكرة صورية</string>
     <string name="welcome">مرحبا بك فى لعبه الذكرة</string>
@@ -8,4 +8,5 @@
     <string name="font_name_fontawesome">fontawesome</string>
     <string name="font_name_source_sans_pro">SourceSansPro</string>
     <string name="home">الرئيسية</string>
+    <string name="fuces">ركز فى الارقام المعروضة</string>
 </resources>
