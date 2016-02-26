@@ -10,6 +10,8 @@
     tools:context="app.memory_games_app.home">
 
 
+
+
     <RelativeLayout
         style="@style/home_main"
         android:layout_width="match_parent"
@@ -22,6 +24,8 @@
             android:layout_width="match_parent"
 
             >
+
+
 
 <TextView
     android:layout_width="match_parent"
