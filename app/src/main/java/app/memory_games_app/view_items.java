@@ -20,7 +20,6 @@ String type;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_items);
 
-     //   type = getIntent().getStringExtra("type");
         type="numbers";
         view v=new view(this);
         v.updateFont(R.id.v_fuces_txt);
@@ -45,6 +44,8 @@ String type;
         g.addToImages(R.id.v_image_data_9);
 
         g.updateImages(type);
+
+
 
 
     }

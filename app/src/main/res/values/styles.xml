@@ -111,7 +111,7 @@
 
     <style name="light_panel">
         <item name="android:background">@drawable/light_bg</item>
-        <item name="android:layout_height">220dp</item>
+        <item name="android:layout_height">210dp</item>
 
 
     </style>
@@ -128,7 +128,7 @@
     <style name="data_img_right" parent="data_img">
         <item name="android:layout_alignParentEnd">true</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginRight">55dp</item>
     </style>
 
     <style name="data_img_center" parent="data_img">
@@ -148,7 +148,7 @@
     <style name="data_img_left" parent="data_img">
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_alignParentStart">true</item>
-        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginLeft">55dp</item>
 
     </style>
 
