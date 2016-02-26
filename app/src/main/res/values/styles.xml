@@ -3,28 +3,21 @@
     <!-- Base application theme. -->
 
 
-
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
         <item name="android:windowBackground">@drawable/layout_bg</item>
-
     </style>
 
     <style name="home_main">
-
         <item name="android:background">@drawable/layout_bg</item>
     </style>
 
 
-
     <style name="header">
         <item name="android:background">@drawable/header_bg</item>
-
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
 
@@ -37,34 +30,32 @@
     </style>
 
 
-
     <style name="nex_bt">
-
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-
-    <item name="android:background">@drawable/next_icon</item>
-    <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/next_icon</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">10dp</item>
 
 
     </style>
+
     <style name="back_bt">
 
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-
         <item name="android:background">@drawable/back_icon</item>
         <item name="android:layout_marginTop">10dp</item>
 
     </style>
-    <style name="home_bt">
 
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="home_bt">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
 
         <item name="android:background">@drawable/home_icon</item>
-        <item name="android:layout_marginTop">10dp</item>
 
     </style>
 
@@ -85,10 +76,8 @@
     </style>
 
 
-
-    <style parent="subtitle" name="subtitlegreen">
+    <style name="subtitlegreen" parent="subtitle">
         <item name="android:textColor">@color/colorGreenText</item>
-
 
 
     </style>
@@ -136,7 +125,6 @@
 
     <style name="data_img_center" parent="data_img">
         <item name="android:layout_centerHorizontal">true</item>
-
 
 
     </style>

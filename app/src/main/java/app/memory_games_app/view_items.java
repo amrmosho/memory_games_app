@@ -20,8 +20,8 @@ String type;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_items);
 
-        type = getIntent().getStringExtra("id");
-
+     //   type = getIntent().getStringExtra("type");
+        type="numbers";
         view v=new view(this);
         v.updateFont(R.id.v_fuces_txt);
         v.updateFont(R.id.v_layout_title);
