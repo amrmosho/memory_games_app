@@ -8,6 +8,7 @@
     <color name="colorGrayText">#999a95</color>
 
     <color name="nullColor">#00000000</color>
+    <color name="border_color">#ffffff</color>
 
 
 </resources>
