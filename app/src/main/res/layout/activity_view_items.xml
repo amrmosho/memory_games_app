@@ -53,14 +53,14 @@
             <ImageView
                 android:id="@+id/v_image_data_1"
                 style="@style/data_img_right"
-                android:src="@drawable/numbers_icon"
+                android:src="@drawable/image_date_1"
                 />
 
             <ImageView
                 android:id="@+id/v_image_data_3"
                 style="@style/data_img_left"
 
-                android:src="@drawable/numbers_icon" />
+                android:src="@drawable/image_date_3" />
 
             <ImageView
                 android:id="@+id/v_image_data_2"
@@ -144,6 +144,14 @@
 
 
         </RelativeLayout>
+
+
+
+
+
+
+
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
