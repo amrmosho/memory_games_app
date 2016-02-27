@@ -1,29 +1,18 @@
 package app.memory_games_app.libs;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.ImageView;
-
-import app.memory_games_app.R;
+import android.widget.EditText;
 
 /**
- * Created by ismail on 2/26/2016.
+ * Created by ismail on 2/27/2016.
  */
-public class imageobject extends ImageView {
+public class textobject extends EditText {
+    private  String ansid="";
+    private  String ansValue="";
 
-    private String ansid = "";
-    private String ansValue = "";
-
-
-    public imageobject(Context context, AttributeSet attrs) {
+    public textobject(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-    }
-
-
-    public imageobject(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
     }
 
     public String getAnsid() {

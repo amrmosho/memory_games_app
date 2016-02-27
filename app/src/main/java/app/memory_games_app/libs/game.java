@@ -2,11 +2,9 @@ package app.memory_games_app.libs;
 
 import android.app.Activity;
 import android.content.ClipData;
-import android.graphics.drawable.Drawable;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +18,7 @@ import app.memory_games_app.R;
  * Created by ismail on 2/26/2016.
  */
 public class game {
+    public ArrayList<textobject> dtata_text = new ArrayList<>();
 
     public ArrayList<imageobject> images = new ArrayList<>();
     public ArrayList<imageobject> dropImages = new ArrayList<>();
@@ -28,7 +27,7 @@ public class game {
     HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
     Activity activity;
 
-    public static  ArrayList<Boolean> results = new ArrayList<>();
+    public static ArrayList<Boolean> results = new ArrayList<>();
 
     public game(Activity activity) {
         this.activity = activity;
@@ -36,8 +35,17 @@ public class game {
     }
 
 
-    public void addToImages(int id) {
+    public void addToText(int id) {
 
+
+        textobject o = (textobject) activity.findViewById(id);
+        o.setAnsid("" + id);
+        dtata_text.add(o);
+
+
+    }
+
+    public void addToImages(int id) {
 
         imageobject o = (imageobject) activity.findViewById(id);
         o.setAnsid("" + id);
@@ -46,15 +54,6 @@ public class game {
 
     }
 
-    public void addToImages(int id, String ans) {
-
-
-        imageobject o = (imageobject) activity.findViewById(id);
-        o.setAnsid(ans);
-        images.add(o);
-
-
-    }
 
     public void addTodropImages(int id) {
 
@@ -68,16 +67,16 @@ public class game {
     void updatePks() {
 
         ArrayList<String> pkg_one = new ArrayList<String>();
-        pkg_one.add("image_date_0");
-        pkg_one.add("image_date_1");
-        pkg_one.add("image_date_2");
-        pkg_one.add("image_date_3");
-        pkg_one.add("image_date_4");
-        pkg_one.add("image_date_5");
-        pkg_one.add("image_date_6");
-        pkg_one.add("image_date_7");
-        pkg_one.add("image_date_8");
-        pkg_one.add("image_date_9");
+        pkg_one.add("image_date_0;0");
+        pkg_one.add("image_date_1;1");
+        pkg_one.add("image_date_2;2");
+        pkg_one.add("image_date_3;3");
+        pkg_one.add("image_date_4;4");
+        pkg_one.add("image_date_5;5");
+        pkg_one.add("image_date_6;6");
+        pkg_one.add("image_date_7;7");
+        pkg_one.add("image_date_8;8");
+        pkg_one.add("image_date_9;9");
         Pkgs.put("numbers", pkg_one);
 
     }
@@ -90,12 +89,15 @@ public class game {
         for (ImageView i : images) {
             Random randomizer = new Random();
 
-int rindex=randomizer.nextInt(thispkg.size());
+            int rindex = randomizer.nextInt(thispkg.size());
 
             String random = thispkg.get(rindex);
-            int myi = activity.getResources().getIdentifier(random, "drawable", activity.getPackageName());
 
-            rightAnswers.add(random);
+
+
+            int myi = activity.getResources().getIdentifier(random.split(";")[0], "drawable", activity.getPackageName());
+
+            rightAnswers.add(random.split(";")[1]);
             thispkg.remove(rindex);
             i.setImageResource(myi);
         }
@@ -106,9 +108,14 @@ int rindex=randomizer.nextInt(thispkg.size());
         ArrayList<String> thispkg = Pkgs.get(type);
         int index = 0;
         for (imageobject i : images) {
-            int myi = activity.getResources().getIdentifier(thispkg.get(index), "drawable", activity.getPackageName());
+
+
+
+            int myi = activity.getResources().getIdentifier(thispkg.get(index).split(";")[0], "drawable", activity.getPackageName());
             i.setImageResource(myi);
 
+            i.setAnsid(thispkg.get(index).split(";")[0]);
+            i.setAnsValue(thispkg.get(index).split(";")[1]);
             index++;
 
         }
@@ -116,23 +123,55 @@ int rindex=randomizer.nextInt(thispkg.size());
 
     }
 
-
-    public void setdeage() {
+    public void updateTextResults() {
         int index = 0;
-        for (ImageView i : images) {
+
+        for (textobject i : dtata_text) {
+
+            i.setAnsid(rightAnswers.get(index));
+            index++;
 
 
-            i.setOnTouchListener(new MyTouchListener());
+            i.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus) {
+
+
+                        textobject me = (textobject) v;
+
+
+                        if (me.getText().equals(me.getAnsid())) {
+                            me.setBackgroundResource(R.drawable.right_text);
+                            results.add(true);
+                        } else {
+                            results.add(false);
+                            me.setBackgroundResource(R.drawable.wrong_text);
+
+
+                        }
+                    }
+                }
+
+
+            });
 
 
         }
 
-        for (imageobject i : dropImages) {
 
+    }
+
+    public void setdeage() {
+        int index = 0;
+        for (ImageView i : images) {
+            i.setOnTouchListener(new MyTouchListener());
+        }
+
+        for (imageobject i : dropImages) {
             i.setOnDragListener(new MyDragListener());
             i.setAnsid(rightAnswers.get(index));
             index++;
-
         }
 
 
@@ -185,8 +224,8 @@ int rindex=randomizer.nextInt(thispkg.size());
 
                         imageobject view = (imageobject) event.getLocalState();
 
-                        String ansid = view.getAnsid();
-                        int myi = activity.getResources().getIdentifier(ansid, "drawable", activity.getPackageName());
+                      //  String ansid = view.getAnsValue();
+                        int myi = activity.getResources().getIdentifier(view.getAnsid(), "drawable", activity.getPackageName());
 
 
                         imageobject myv = (imageobject) v;
@@ -196,7 +235,7 @@ int rindex=randomizer.nextInt(thispkg.size());
                         status = true;
 
 
-                        if (myv.getAnsid().equals(ansid)) {
+                        if (myv.getAnsValue().equals(view.getAnsid())) {
                             Toast.makeText(activity, R.string.rightAns, Toast.LENGTH_SHORT).show();
 
                             myv.setImageResource(R.drawable.right_image);

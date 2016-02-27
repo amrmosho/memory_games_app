@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".order_images"></activity>
-        <activity android:name=".results"></activity>
+        <activity android:name=".order_images" />
+        <activity android:name=".results" />
+        <activity android:name=".write_answers"></activity>
     </application>
 
 </manifest>

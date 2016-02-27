@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.memory_games_app.write_answers">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        style="@style/header"
+
+
+        >
+
+
+        <ImageButton
+            android:id="@+id/home"
+            style="@style/home_bt"
+            android:onClick="goHome" />
+
+        <TextView
+            android:id="@+id/w_layout_title"
+            style="@style/subtitle"
+            android:text="@string/mem_number" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+
+        <RelativeLayout
+            android:id="@+id/lightPanel"
+            style="@style/light_panel"
+            android:layout_width="match_parent"
+
+            android:layout_height="180dp"
+
+
+            >
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+
+            <TextView
+                android:id="@+id/w_write_txt"
+                style="@style/subtitlegreen"
+                android:layout_below="@+id/imageView4"
+
+                android:text="@string/rwiet" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/row1"
+            style="@style/itempanl"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/lightPanel"
+
+            android:layout_gravity="right">
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_1"
+                style="@style/data_text_right"
+                />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_3"
+                style="@style/data_text_left"
+                />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_2"
+                style="@style/data_text_center"
+                android:inputType="text"
+
+                android:text="45455" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/row2"
+            style="@style/itempanl"
+
+            android:layout_width="match_parent"
+            android:layout_below="@+id/row1">
+
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_4"
+                style="@style/data_text_right"
+               />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_5"
+                style="@style/data_text_left"
+                />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_6"
+                style="@style/data_text_center"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/row3"
+
+            style="@style/itempanl"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/row2">
+
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_7"
+                style="@style/data_text_right"
+                />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_8"
+                style="@style/data_text_left"
+
+                />
+
+            <app.memory_games_app.libs.textobject
+                android:id="@+id/w_text_data_9"
+                style="@style/data_text_center"
+                 />
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@style/nex_bt"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/row3"
+
+            android:onClick="GoNext" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

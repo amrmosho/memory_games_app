@@ -57,7 +57,8 @@ public class view_items extends AppCompatActivity {
 
     public void GoNext(View view) {
 
-        Intent t = new Intent(this, order_images.class);
+       // Intent t = new Intent(this, order_images.class);
+        Intent t = new Intent(this, write_answers.class);
 
         t.putExtra("type",type);
         startActivity(t);
