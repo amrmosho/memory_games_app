@@ -24,7 +24,7 @@ public class game {
     public ArrayList<imageobject> images = new ArrayList<>();
     public ArrayList<imageobject> dropImages = new ArrayList<>();
 
-  static   ArrayList<String> rightAnswers = new ArrayList<>();
+    static ArrayList<String> rightAnswers = new ArrayList<>();
     HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
     Activity activity;
 
@@ -177,31 +177,35 @@ public class game {
                     break;
                 case DragEvent.ACTION_DROP:
 
-                    imageobject view = (imageobject) event.getLocalState();
 
-
-                    String ansid = view.getAnsid();
-                    int myi = activity.getResources().getIdentifier(ansid, "drawable", activity.getPackageName());
                     if (v instanceof ImageView) {
-                        ImageView myv = (ImageView) v;
-                        myv.setImageResource(myi);
+
+                        imageobject view = (imageobject) event.getLocalState();
+
+                        String ansid = view.getAnsid();
+                        int myi = activity.getResources().getIdentifier(ansid, "drawable", activity.getPackageName());
+
+
+                        imageobject myv = (imageobject) v;
+
+                        myv.setBackgroundResource(myi);
                         view.setVisibility(View.INVISIBLE);
                         status = true;
+
+
+                        if (myv.getAnsid().equals(ansid)) {
+                            Toast.makeText(activity, R.string.rightAns, Toast.LENGTH_SHORT).show();
+
+                            myv.setImageResource(R.drawable.right_image);
+                            results.add(true);
+                        } else {
+                            Toast.makeText(activity, R.string.wrongAns, Toast.LENGTH_SHORT).show();
+                            results.add(false);
+
+                            myv.setImageResource(R.drawable.wrong_image);
+
+                        }
                     }
-                    imageobject myv = (imageobject) v;
-
-
-                    String more = myv.getAnsid() + ":::::" + (ansid);
-                    if (myv.getAnsid().equals(ansid)) {
-                        Toast.makeText(activity,R.string.rightAns, Toast.LENGTH_SHORT).show();
-
-                        results.add(true);
-                    } else {
-                        Toast.makeText(activity,R.string.wrongAns, Toast.LENGTH_SHORT).show();
-                        results.add(false);
-
-                    }
-
 
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:

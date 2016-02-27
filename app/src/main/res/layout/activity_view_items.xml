@@ -28,8 +28,6 @@
             android:text="@string/mem_number" />
 
 
-
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -85,13 +83,13 @@
 
             <app.memory_games_app.libs.imageobject
                 android:id="@+id/v_image_data_3"
-                style="@style/data_img_left"
-
-                android:src="@drawable/image_date_3" />
+                style="@style/data_img_left" android:src="@drawable/numbers_icon"
+                 />
 
             <app.memory_games_app.libs.imageobject
                 android:id="@+id/v_image_data_2"
                 style="@style/data_img_center"
+
                 android:src="@drawable/numbers_icon" />
 
         </RelativeLayout>
@@ -167,8 +165,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/row3"
 
-android:onClick="GoNext"
-            />
+            android:onClick="GoNext" />
 
     </RelativeLayout>
 
