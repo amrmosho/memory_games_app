@@ -94,7 +94,6 @@ public class game {
             String random = thispkg.get(rindex);
 
 
-
             int myi = activity.getResources().getIdentifier(random.split(";")[0], "drawable", activity.getPackageName());
 
             rightAnswers.add(random.split(";")[1]);
@@ -108,7 +107,6 @@ public class game {
         ArrayList<String> thispkg = Pkgs.get(type);
         int index = 0;
         for (imageobject i : images) {
-
 
 
             int myi = activity.getResources().getIdentifier(thispkg.get(index).split(";")[0], "drawable", activity.getPackageName());
@@ -129,6 +127,8 @@ public class game {
         for (textobject i : dtata_text) {
 
             i.setAnsid(rightAnswers.get(index));
+
+            i.setAnsValue("" + rightAnswers.get(index));
             index++;
 
 
@@ -140,8 +140,7 @@ public class game {
 
                         textobject me = (textobject) v;
 
-
-                        if (me.getText().equals(me.getAnsid())) {
+                        if (me.getText().toString().equals(me.getAnsValue())) {
                             me.setBackgroundResource(R.drawable.right_text);
                             results.add(true);
                         } else {
@@ -171,6 +170,7 @@ public class game {
         for (imageobject i : dropImages) {
             i.setOnDragListener(new MyDragListener());
             i.setAnsid(rightAnswers.get(index));
+            i.setAnsValue(rightAnswers.get(index));
             index++;
         }
 
@@ -224,7 +224,7 @@ public class game {
 
                         imageobject view = (imageobject) event.getLocalState();
 
-                      //  String ansid = view.getAnsValue();
+                        //  String ansid = view.getAnsValue();
                         int myi = activity.getResources().getIdentifier(view.getAnsid(), "drawable", activity.getPackageName());
 
 
@@ -235,7 +235,7 @@ public class game {
                         status = true;
 
 
-                        if (myv.getAnsValue().equals(view.getAnsid())) {
+                        if (myv.getAnsValue().equals(view.getAnsValue())) {
                             Toast.makeText(activity, R.string.rightAns, Toast.LENGTH_SHORT).show();
 
                             myv.setImageResource(R.drawable.right_image);
