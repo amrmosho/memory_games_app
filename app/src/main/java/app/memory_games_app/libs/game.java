@@ -89,11 +89,14 @@ public class game {
         ArrayList<String> thispkg = Pkgs.get(type);
         for (ImageView i : images) {
             Random randomizer = new Random();
-            String random = thispkg.get(randomizer.nextInt(thispkg.size()));
+
+int rindex=randomizer.nextInt(thispkg.size());
+
+            String random = thispkg.get(rindex);
             int myi = activity.getResources().getIdentifier(random, "drawable", activity.getPackageName());
 
             rightAnswers.add(random);
-
+            thispkg.remove(rindex);
             i.setImageResource(myi);
         }
     }

@@ -14,7 +14,7 @@ public class order_images extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_images);
-
+game.results.clear();
 
         view v = new view(this);
         v.updateFont(R.id.o_order_txt);

@@ -21,7 +21,7 @@
             android:onClick="goHome" />
 
         <TextView
-            android:id="@+id/v_layout_title"
+            android:id="@+id/r_layout_title"
             style="@style/subtitle"
             android:text="@string/mem_number" />
 

@@ -18,20 +18,29 @@ public class results extends AppCompatActivity {
         getresults();
 
         view v = new view(this);
+        v.updateFont(R.id.r_layout_title);
+
+
         v.updateFont(R.id.r_results_txt);
         v.updateFont(R.id.r_wrong_answers);
         v.updateFont(R.id.r_right_answer);
         v.updateFont(R.id.r_results_txt);
+        v.updateFont(R.id.r_right_answer_number);
+
+        v.updateFont(R.id.r_wrong_answers_number);
+
+        v.updateFont(R.id.r_full_results);
+
 
         TextView tRightAnswers = (TextView) findViewById(R.id.r_right_answer_number);
-        tRightAnswers.setText(rightAnswers);
+        tRightAnswers.setText("" + rightAnswers);
 
 
         TextView tWrongAnswer = (TextView) findViewById(R.id.r_wrong_answers_number);
-        tWrongAnswer.setText(wrongAnswers);
+        tWrongAnswer.setText("" + wrongAnswers);
 
 
-        double full = (rightAnswers / (rightAnswers + wrongAnswers)) * 100;
+        float full = Math.round((rightAnswers / (rightAnswers + wrongAnswers)) * 100);
 
         TextView tFullResults = (TextView) findViewById(R.id.r_full_results);
         tFullResults.setText(full + "%");
@@ -46,8 +55,8 @@ public class results extends AppCompatActivity {
 
     }
 
-    int rightAnswers = 0;
-    int wrongAnswers = 0;
+    float rightAnswers = 0f;
+    float wrongAnswers = 0f;
 
     void getresults() {
         for (boolean i : game.results) {
