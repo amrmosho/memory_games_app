@@ -28,7 +28,7 @@ public class game {
     HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
     Activity activity;
 
-    ArrayList<Boolean> results = new ArrayList<>();
+    public static  ArrayList<Boolean> results = new ArrayList<>();
 
     public game(Activity activity) {
         this.activity = activity;

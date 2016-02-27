@@ -12,4 +12,7 @@
     <string name="orderimages">أدخل الصور فى أماكنها</string>
     <string name="rightAns">أجايه صحيحه أحسنت .....</string>
     <string name="wrongAns">لاسف أجابه غير صحيحة</string>
+    <string name="results">النتيجه</string>
+    <string name="wrongAnswer">الاجابات الخطا</string>
+    <string name="rightAnswer">الاجابات الصحيحة</string>
 </resources>

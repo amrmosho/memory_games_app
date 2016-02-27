@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="app.memory_games_app.results">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        style="@style/header"
+
+
+        >
+
+
+        <ImageButton
+            android:id="@+id/home"
+            style="@style/home_bt"
+            android:onClick="goHome" />
+
+        <TextView
+            android:id="@+id/v_layout_title"
+            style="@style/subtitle"
+            android:text="@string/mem_number" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+
+        <RelativeLayout
+            android:id="@+id/lightPanel"
+            style="@style/light_panel"
+            android:layout_width="match_parent"
+
+            android:layout_height="180dp"
+
+
+            >
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+
+            <TextView
+                android:id="@+id/r_results_txt"
+                style="@style/subtitlegreen"
+                android:layout_below="@+id/imageView4"
+                android:text="@string/results" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/row1"
+            style="@style/itempanl"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/lightPanel"
+
+            android:layout_gravity="right">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+
+
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/r_wrong_answers_number"
+                    style="@style/label"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/r_wrong_answers"
+                    style="@style/label"
+                    android:text="@string/wrongAnswer" />
+
+
+                <TextView
+                    android:id="@+id/r_right_answer_number"
+                    style="@style/label"
+
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/r_right_answer"
+                    style="@style/label"
+                    android:text="@string/rightAnswer" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/row2"
+            style="@style/itempanl"
+
+            android:layout_width="match_parent"
+            android:layout_below="@+id/row1">
+
+
+            <TextView
+                android:id="@+id/r_full_results"
+
+                style="@style/label"
+                android:layout_centerHorizontal="true"
+                android:text="00%" />
+
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+
+            android:id="@+id/imageButton"
+
+            android:layout_centerHorizontal="true"
+            style="@style/home_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row2"
+            android:onClick="GoHome"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

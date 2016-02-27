@@ -230,6 +230,7 @@
         <ImageButton
             android:id="@+id/imageButton"
             style="@style/nex_bt"
+            android:onClick="goNext"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/row3"
