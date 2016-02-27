@@ -80,14 +80,14 @@
             <app.memory_games_app.libs.textobject
                 android:id="@+id/w_text_data_3"
                 style="@style/data_text_left"
-                />
+               />
 
             <app.memory_games_app.libs.textobject
                 android:id="@+id/w_text_data_2"
                 style="@style/data_text_center"
                 android:inputType="text"
 
-                android:text="45455" />
+                 />
 
         </RelativeLayout>
 

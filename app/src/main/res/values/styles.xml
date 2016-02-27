@@ -174,12 +174,16 @@
 
 
     <style name="data_text">
-
+        <item name="android:textSize">45dp</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:background">@drawable/text</item>
+
+
+
+        <item name="android:gravity">center</item>
 
     </style>
 
@@ -191,6 +195,8 @@
 
     <style name="data_text_center" parent="data_text">
         <item name="android:layout_centerHorizontal">true</item>
+
+
 
 
     </style>
