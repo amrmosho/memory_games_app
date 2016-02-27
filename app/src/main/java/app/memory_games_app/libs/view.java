@@ -21,6 +21,9 @@ public class view {
 public void updateFont(int id){
 
     Typeface custom_font = Typeface.createFromAsset(activity.getAssets(),  "fonts/AGA-Cordoba-V2-Bold.ttf");
+
+
+
     TextView tx = (TextView)activity.findViewById(id);
     tx.setTypeface(custom_font);
 

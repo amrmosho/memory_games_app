@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,14 +21,14 @@ import app.memory_games_app.R;
  */
 public class game {
 
-    HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
-
     public ArrayList<imageobject> images = new ArrayList<>();
+    public ArrayList<imageobject> dropImages = new ArrayList<>();
 
-    public ArrayList<ImageView> dropImages = new ArrayList<>();
-
+  static   ArrayList<String> rightAnswers = new ArrayList<>();
+    HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
     Activity activity;
 
+    ArrayList<Boolean> results = new ArrayList<>();
 
     public game(Activity activity) {
         this.activity = activity;
@@ -56,7 +57,10 @@ public class game {
     }
 
     public void addTodropImages(int id) {
-        dropImages.add((ImageView) activity.findViewById(id));
+
+        imageobject o = (imageobject) activity.findViewById(id);
+        dropImages.add(o);
+
 
     }
 
@@ -87,6 +91,9 @@ public class game {
             Random randomizer = new Random();
             String random = thispkg.get(randomizer.nextInt(thispkg.size()));
             int myi = activity.getResources().getIdentifier(random, "drawable", activity.getPackageName());
+
+            rightAnswers.add(random);
+
             i.setImageResource(myi);
         }
     }
@@ -95,9 +102,10 @@ public class game {
     public void fillImages(String type) {
         ArrayList<String> thispkg = Pkgs.get(type);
         int index = 0;
-        for (ImageView i : images) {
+        for (imageobject i : images) {
             int myi = activity.getResources().getIdentifier(thispkg.get(index), "drawable", activity.getPackageName());
             i.setImageResource(myi);
+
             index++;
 
         }
@@ -107,6 +115,7 @@ public class game {
 
 
     public void setdeage() {
+        int index = 0;
         for (ImageView i : images) {
 
 
@@ -115,10 +124,11 @@ public class game {
 
         }
 
-        for (ImageView i : dropImages) {
+        for (imageobject i : dropImages) {
 
             i.setOnDragListener(new MyDragListener());
-
+            i.setAnsid(rightAnswers.get(index));
+            index++;
 
         }
 
@@ -148,6 +158,7 @@ public class game {
     }
 
     boolean status = false;
+
     class MyDragListener implements View.OnDragListener {
 
 
@@ -170,20 +181,27 @@ public class game {
 
 
                     String ansid = view.getAnsid();
-
-
-
                     int myi = activity.getResources().getIdentifier(ansid, "drawable", activity.getPackageName());
-
                     if (v instanceof ImageView) {
-
                         ImageView myv = (ImageView) v;
-
                         myv.setImageResource(myi);
-
                         view.setVisibility(View.INVISIBLE);
                         status = true;
                     }
+                    imageobject myv = (imageobject) v;
+
+
+                    String more = myv.getAnsid() + ":::::" + (ansid);
+                    if (myv.getAnsid().equals(ansid)) {
+                        Toast.makeText(activity,R.string.rightAns, Toast.LENGTH_SHORT).show();
+
+                        results.add(true);
+                    } else {
+                        Toast.makeText(activity,R.string.wrongAns, Toast.LENGTH_SHORT).show();
+                        results.add(false);
+
+                    }
+
 
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:

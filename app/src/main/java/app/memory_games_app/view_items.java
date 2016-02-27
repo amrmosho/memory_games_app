@@ -14,19 +14,20 @@ import app.memory_games_app.libs.game;
 import app.memory_games_app.libs.view;
 
 public class view_items extends AppCompatActivity {
-String type;
+    String type = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_items);
 
-        type="numbers";
-        view v=new view(this);
+        type = "numbers";
+
+
+
+        view v = new view(this);
         v.updateFont(R.id.v_fuces_txt);
         v.updateFont(R.id.v_layout_title);
-
-
-
 
 
         game g = new game(this);
@@ -40,12 +41,9 @@ String type;
         g.addToImages(R.id.v_image_data_6);
         g.addToImages(R.id.v_image_data_7);
         g.addToImages(R.id.v_image_data_8);
-
         g.addToImages(R.id.v_image_data_9);
 
         g.updateImages(type);
-
-
 
 
     }
@@ -55,5 +53,13 @@ String type;
         Intent t = new Intent(this, home.class);
         startActivity(t);
 
+    }
+
+    public void GoNext(View view) {
+
+        Intent t = new Intent(this, order_images.class);
+
+        t.putExtra("type",type);
+        startActivity(t);
     }
 }

@@ -21,7 +21,7 @@ public class order_images extends AppCompatActivity {
 
 
 
-        String type = "numbers";
+        String type = getIntent().getStringExtra("type");
         game g = new game(this);
 
 
