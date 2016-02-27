@@ -17,14 +17,12 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-
-
-        view v=new view(this);
+        view v = new view(this);
 
 
         v.updateFont(R.id.welcome_txt);
-        v.updateFont(R.id.numbers_bt_text,"button");
-        v.updateFont(R.id.images_bt_text,"button");
+        v.updateFont(R.id.numbers_bt_text, "button");
+        v.updateFont(R.id.images_bt_text, "button");
 
 
     }
@@ -34,15 +32,23 @@ public class home extends AppCompatActivity {
 
         Intent t = new Intent(this, view_items.class);
 
-        t.putExtra("type","numbers");
+        t.putExtra("type", "numbers");
         startActivity(t);
     }
 
-    public void goToNumbers(View view) {
+    public void goToMoving(View view) {
 
-        Intent t = new Intent(this, view_items.class);
+        Intent t = new Intent(this, categories.class);
+        t.putExtra("gametype", "moving");
+        startActivity(t);
+    }
 
-        t.putExtra("type","numbers");
+
+    public void goToRwiteing(View view) {
+
+
+        Intent t = new Intent(this, categories.class);
+        t.putExtra("gametype", "writeing");
         startActivity(t);
     }
 }

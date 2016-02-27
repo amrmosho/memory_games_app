@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".order_images" />
         <activity android:name=".results" />
-        <activity android:name=".write_answers"></activity>
+        <activity android:name=".write_answers" />
+        <activity android:name=".categories"></activity>
     </application>
 
 </manifest>

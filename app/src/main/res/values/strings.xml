@@ -16,4 +16,6 @@
     <string name="wrongAnswer">الاجابات الخطا</string>
     <string name="rightAnswer">الاجابات الصحيحة</string>
     <string name="rwiet">أدخل الارقام أو الحروف  بنفس الترتيب</string>
+    <string name="orderByright">الترتيب بواسطه الكتابه</string>
+    <string name="orderbyMovie">الترتيب بواسطه التحريك</string>
 </resources>
