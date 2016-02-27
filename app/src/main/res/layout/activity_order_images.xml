@@ -71,28 +71,28 @@
                 android:orientation="horizontal"
                 >
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
 
                     android:id="@+id/s_image_data_1"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_2"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_3"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_4"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_5"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
@@ -103,27 +103,27 @@
                 android:layout_height="60dp"
                 android:layout_centerHorizontal="true"
                 android:orientation="horizontal">
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_6"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_7"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_8"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_9"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />
 
-                <ImageView
+                <app.memory_games_app.libs.imageobject
                     android:id="@+id/s_image_data_10"
                     style="@style/s_data_img_center"
                     android:src="@drawable/empty_image" />

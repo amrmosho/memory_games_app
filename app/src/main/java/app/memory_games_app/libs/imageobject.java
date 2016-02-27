@@ -13,6 +13,7 @@ import app.memory_games_app.R;
 public class imageobject extends ImageView {
 
     private int mCachedResourceId = 0;
+private  String ansid="";
 
 
     public imageobject(Context context, AttributeSet attrs) {
@@ -36,5 +37,13 @@ public class imageobject extends ImageView {
 
     public void resetToDefault() {
         setImageResource(mCachedResourceId);
+    }
+
+    public String getAnsid() {
+        return ansid;
+    }
+
+    public void setAnsid(String ansid) {
+        this.ansid = ansid;
     }
 }

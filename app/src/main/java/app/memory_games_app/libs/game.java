@@ -22,7 +22,7 @@ public class game {
 
     HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
 
-    public ArrayList<ImageView> images = new ArrayList<>();
+    public ArrayList<imageobject> images = new ArrayList<>();
 
     public ArrayList<ImageView> dropImages = new ArrayList<>();
 
@@ -36,9 +36,25 @@ public class game {
 
 
     public void addToImages(int id) {
-        images.add((ImageView) activity.findViewById(id));
+
+
+        imageobject o = (imageobject) activity.findViewById(id);
+        o.setAnsid("" + id);
+        images.add(o);
+
 
     }
+
+    public void addToImages(int id, String ans) {
+
+
+        imageobject o = (imageobject) activity.findViewById(id);
+        o.setAnsid(ans);
+        images.add(o);
+
+
+    }
+
     public void addTodropImages(int id) {
         dropImages.add((ImageView) activity.findViewById(id));
 
@@ -97,14 +113,11 @@ public class game {
             i.setOnTouchListener(new MyTouchListener());
 
 
-
         }
 
         for (ImageView i : dropImages) {
 
-
             i.setOnDragListener(new MyDragListener());
-
 
 
         }
@@ -112,71 +125,75 @@ public class game {
 
     }
 
+    View movewobj = null;
 
     private final class MyTouchListener implements View.OnTouchListener {
         public boolean onTouch(View view, MotionEvent motionEvent) {
 
 
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                ClipData data = ClipData.newPlainText("", "");
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                view.startDrag(data, shadowBuilder, view, 0);
 
+                movewobj = view;
+                view.setVisibility(View.INVISIBLE);
 
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                    ClipData data = ClipData.newPlainText("", "");
-                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                    view.startDrag(data, shadowBuilder, view, 0);
-                    view.setVisibility(View.INVISIBLE);
-                    return true;
-                } else {
-                    return false;
-                }
+                return true;
+            } else {
+                return false;
+            }
 
         }
     }
 
-
-
-
+    boolean status = false;
     class MyDragListener implements View.OnDragListener {
-       // Drawable enterShape = activity.getResources().getDrawable(R.drawable.shape_droptarget);
-       // Drawable normalShape = getResources().getDrawable(R.drawable.shape);
+
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
             int action = event.getAction();
+
+
             switch (event.getAction()) {
                 case DragEvent.ACTION_DRAG_STARTED:
-                    // do nothing
-
+                    status = false;
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
-                    //v.setBackgroundDrawable(enterShape);
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
-                   // v.setBackgroundDrawable(normalShape);
                     break;
                 case DragEvent.ACTION_DROP:
 
-                    ImageView view = (ImageView) event.getLocalState();
+                    imageobject view = (imageobject) event.getLocalState();
 
-                    int myi = activity.getResources().getIdentifier("image_date_0", "drawable", activity.getPackageName());
-                    view.setImageResource(myi);
-                    ImageView oview = (ImageView)v;
 
-                    int myi2 = activity.getResources().getIdentifier("image_date_1", "drawable", activity.getPackageName());
-
-                    oview.setImageResource(myi2);
+                    String ansid = view.getAnsid();
 
 
 
-                    // Dropped, reassign View to ViewGroup
-                  /*
-                    ViewGroup owner = (ViewGroup) view.getParent();
-                    owner.removeView(view);
-                    LinearLayout container = (LinearLayout) v;
-                    container.addView(view);
-                    view.setVisibility(View.VISIBLE);*/
+                    int myi = activity.getResources().getIdentifier(ansid, "drawable", activity.getPackageName());
+
+                    if (v instanceof ImageView) {
+
+                        ImageView myv = (ImageView) v;
+
+                        myv.setImageResource(myi);
+
+                        view.setVisibility(View.INVISIBLE);
+                        status = true;
+                    }
+
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                   // v.setBackgroundDrawable(normalShape);
+
+                    if (!status) {
+
+                        movewobj.setVisibility(View.VISIBLE);
+                    }
+
+
                 default:
                     break;
             }

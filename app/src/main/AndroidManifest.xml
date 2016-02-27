@@ -10,14 +10,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".home"></activity>
         <activity android:name=".view_items">
-
-        </activity>
-        <activity android:name=".order_images">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".order_images">
+
 
 
 
