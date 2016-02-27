@@ -15,14 +15,17 @@ import app.memory_games_app.libs.view;
 
 public class view_items extends AppCompatActivity {
     String type = "";
+    String gametype = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_items);
 
-        type = "numbers";
+        type = getIntent().getStringExtra("type");
 
+
+        gametype = getIntent().getStringExtra("gametype");
 
 
         view v = new view(this);
@@ -57,10 +60,15 @@ public class view_items extends AppCompatActivity {
 
     public void GoNext(View view) {
 
-       // Intent t = new Intent(this, order_images.class);
-        Intent t = new Intent(this, write_answers.class);
+        Intent t;
+        if (gametype.equalsIgnoreCase("writeing")) {
+            t = new Intent(this, write_answers.class);
+        } else {
+            t = new Intent(this, order_images.class);
+        }
 
-        t.putExtra("type",type);
+
+        t.putExtra("type", type);
         startActivity(t);
     }
 }

@@ -56,4 +56,12 @@ public class write_answers extends AppCompatActivity {
         Intent t = new Intent(this, results.class);
         startActivity(t);
     }
+
+    public void goHome(View view) {
+
+        Intent t = new Intent(this, home.class);
+
+
+        startActivity(t);
+    }
 }

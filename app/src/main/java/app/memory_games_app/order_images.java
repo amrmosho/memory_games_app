@@ -61,4 +61,11 @@ public class order_images extends AppCompatActivity {
 
         startActivity(t);
     }
+    public void goHome(View view) {
+
+        Intent t = new Intent(this, home.class);
+
+
+        startActivity(t);
+    }
 }

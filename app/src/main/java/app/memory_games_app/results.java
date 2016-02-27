@@ -48,7 +48,7 @@ public class results extends AppCompatActivity {
 
     }
 
-    public void GoHome(View view) {
+    public void goHome(View view) {
         Intent i = new Intent(this, home.class);
         startActivity(i);
 

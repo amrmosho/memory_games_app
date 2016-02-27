@@ -3,10 +3,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
+
     tools:context="app.memory_games_app.categories">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        style="@style/header"
+
+
+        >
+
+
+        <ImageButton
+            android:id="@+id/home"
+            style="@style/home_bt"
+            android:onClick="goHome" />
+
+        <TextView
+            android:id="@+id/c_layout_title"
+            style="@style/subtitle"
+            android:text="@string/categories" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+
+        <RelativeLayout
+            android:id="@+id/lightPanel"
+            style="@style/light_panel"
+            android:layout_width="match_parent"
+
+            android:layout_height="180dp"
+
+
+            >
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+
+            <TextView
+                android:id="@+id/v_fuces_txt"
+                style="@style/subtitlegreen"
+                android:layout_below="@+id/imageView4"
+
+                android:text="@string/choseCategory" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/row1"
+            style="@style/itempanl"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/lightPanel"
+
+            android:layout_gravity="right">
+
+            <ImageView
+                android:id="@+id/v_image_data_1"
+                style="@style/data_img_right"
+                android:src="@drawable/image_date_1"
+                android:onClick="gotoNumbers"
+
+                />
+
+            <Button
+                style="@style/button"
+                android:text="@string/numbers"
+                android:id="@+id/c_gotoNumbers"
+                android:layout_alignBottom="@+id/v_image_data_1"
+                android:layout_toLeftOf="@+id/v_image_data_1"
+                android:layout_toStartOf="@+id/v_image_data_1"
+                android:onClick="gotoNumbers"
+
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/row2"
+            style="@style/itempanl"
+
+            android:layout_width="match_parent"
+            android:layout_below="@+id/row1">
+
+
+            <app.memory_games_app.libs.imageobject
+                android:id="@+id/v_image_data_4"
+                style="@style/data_img_right"
+                android:src="@drawable/letter_a"
+
+                android:onClick="gotoLettrs"
+
+                />
+
+
+
+            <Button
+                style="@style/button"
+                android:text="@string/letters"
+                android:layout_alignBottom="@+id/v_image_data_4"
+                android:layout_toLeftOf="@+id/v_image_data_4"
+                android:layout_toStartOf="@+id/v_image_data_4"
+                android:onClick="gotoLettrs"
+                android:id="@+id/gotoLettrs"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/row3"
+
+            style="@style/itempanl"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/row2">
+
+
+            <app.memory_games_app.libs.imageobject
+                android:id="@+id/v_image_data_7"
+                style="@style/data_img_right"
+                android:src="@drawable/aletter_1"
+                android:onClick="gotoALetter"
+
+                />
+
+            <Button
+                style="@style/button"
+                android:text="@string/aletters"
+                android:layout_alignBottom="@+id/v_image_data_7"
+                android:layout_toLeftOf="@+id/v_image_data_7"
+                android:layout_toStartOf="@+id/v_image_data_7"
+                android:onClick="gotoALetter"
+
+                android:id="@+id/c_gotoALetter"
+
+
+                />
+
+
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@style/nex_bt"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/row3"
+
+            android:onClick="GoNext" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
