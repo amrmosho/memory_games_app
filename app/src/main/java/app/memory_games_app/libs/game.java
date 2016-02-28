@@ -23,11 +23,13 @@ public class game {
     public ArrayList<imageobject> images = new ArrayList<>();
     public ArrayList<imageobject> dropImages = new ArrayList<>();
 
-    static ArrayList<String> rightAnswers = new ArrayList<>();
+    public   static ArrayList<String> rightAnswers = new ArrayList<>();
+    public static ArrayList<Boolean> results = new ArrayList<>();
+
+
     HashMap<String, ArrayList<String>> Pkgs = new HashMap<>();
     Activity activity;
 
-    public static ArrayList<Boolean> results = new ArrayList<>();
 
     public game(Activity activity) {
         this.activity = activity;

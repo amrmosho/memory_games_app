@@ -21,20 +21,12 @@ public class home extends AppCompatActivity {
 
 
         v.updateFont(R.id.welcome_txt);
-        v.updateFont(R.id.numbers_bt_text, "button");
-        v.updateFont(R.id.images_bt_text, "button");
+        v.updateFont(R.id.numbers_bt_text, "mobily");
+        v.updateFont(R.id.images_bt_text, "mobily");
 
 
     }
 
-
-    public void goToImage(View view) {
-
-        Intent t = new Intent(this, view_items.class);
-
-        t.putExtra("type", "numbers");
-        startActivity(t);
-    }
 
     public void goToMoving(View view) {
 

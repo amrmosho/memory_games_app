@@ -26,10 +26,10 @@ public class categories extends AppCompatActivity {
 
 
 
-        v.updateFont(R.id.c_gotoNumbers,"button");
-        v.updateFont(R.id.gotoLettrs,"button");
+        v.updateFont(R.id.c_gotoNumbers,"mobily");
+        v.updateFont(R.id.gotoLettrs,"mobily");
 
-        v.updateFont(R.id.c_gotoALetter,"button");
+        v.updateFont(R.id.c_gotoALetter,"mobily");
 
 
 

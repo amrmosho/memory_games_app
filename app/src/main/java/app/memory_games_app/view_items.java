@@ -34,7 +34,9 @@ public class view_items extends AppCompatActivity {
 
 
         game g = new game(this);
+        game.results.clear();
 
+        game.rightAnswers.clear();
 
         g.addToImages(R.id.v_image_data_1);
         g.addToImages(R.id.v_image_data_2);

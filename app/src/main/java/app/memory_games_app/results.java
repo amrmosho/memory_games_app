@@ -18,10 +18,11 @@ public class results extends AppCompatActivity {
         getresults();
 
         view v = new view(this);
-        v.updateFont(R.id.r_layout_title);
 
 
         v.updateFont(R.id.r_results_txt);
+
+
         v.updateFont(R.id.r_wrong_answers);
         v.updateFont(R.id.r_right_answer);
         v.updateFont(R.id.r_results_txt);

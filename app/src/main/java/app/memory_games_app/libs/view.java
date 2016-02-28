@@ -2,6 +2,7 @@ package app.memory_games_app.libs;
 
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,34 +19,45 @@ public class view {
     }
 
 
-public void updateFont(int id){
+    public void updateFont(int id) {
 
-    Typeface custom_font = Typeface.createFromAsset(activity.getAssets(),  "fonts/AGA-Cordoba-V2-Bold.ttf");
-
-
-
-    TextView tx = (TextView)activity.findViewById(id);
-    tx.setTypeface(custom_font);
+        Typeface custom_font = Typeface.createFromAsset(activity.getAssets(), "fonts/AGA-Cordoba-V2-Bold.ttf");
 
 
+        View o = (View) activity.findViewById(id);
 
-}
+        if (o instanceof TextView) {
 
-    public void updateFont(int id ,String type){
+            TextView tx = (TextView) o;
+            tx.setTypeface(custom_font);
+        } else if (o instanceof Button) {
+            Button tx = (Button) o;
+            tx.setTypeface(custom_font);
 
-        Typeface custom_font = Typeface.createFromAsset(activity.getAssets(),  "fonts/AGA-Cordoba-V2-Bold.ttf");
-
-        switch (type){
-            default:
-
-
-
-        Button tx = (Button)activity.findViewById(id);
-        tx.setTypeface(custom_font);
-break;
         }
+
 
     }
 
 
+    public void updateFont(int id, String font) {
+
+
+        Typeface custom_font = Typeface.createFromAsset(activity.getAssets(), "fonts/" + font + ".ttf");
+
+
+        View o = (View) activity.findViewById(id);
+
+        if (o instanceof TextView) {
+
+            TextView tx = (TextView) o;
+            tx.setTypeface(custom_font);
+        } else if (o instanceof Button) {
+            Button tx = (Button) o;
+            tx.setTypeface(custom_font);
+
+        }
+
+    }
 }
+
