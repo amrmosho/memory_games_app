@@ -21,6 +21,11 @@ public class categories extends AppCompatActivity {
 
         view v = new view(this);
         v.updateFont(R.id.c_layout_title);
+        v.updateFont(R.id.c_chose_txt);
+
+
+
+
         v.updateFont(R.id.c_gotoNumbers,"button");
         v.updateFont(R.id.gotoLettrs,"button");
 

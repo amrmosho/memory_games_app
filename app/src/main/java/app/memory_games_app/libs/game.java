@@ -77,7 +77,41 @@ public class game {
         pkg_one.add("image_date_7;7");
         pkg_one.add("image_date_8;8");
         pkg_one.add("image_date_9;9");
+
+
         Pkgs.put("numbers", pkg_one);
+
+
+        ArrayList<String> pkg_l = new ArrayList<>();
+        pkg_l.add("letter_a;a");
+        pkg_l.add("letter_b;b");
+        pkg_l.add("letter_c;c");
+        pkg_l.add("letter_d;d");
+        pkg_l.add("letter_e;e");
+        pkg_l.add("letter_f;f");
+        pkg_l.add("letter_g;g");
+        pkg_l.add("letter_h;h");
+        pkg_l.add("letter_i;i");
+        pkg_l.add("letter_j;j");
+
+
+        Pkgs.put("letters", pkg_l);
+
+        ArrayList<String> pkg_al = new ArrayList<>();
+        pkg_al.add("aletter_1;ا");
+        pkg_al.add("aletter_2;ب");
+        pkg_al.add("aletter_3;ت");
+        pkg_al.add("aletter_4;ث");
+        pkg_al.add("aletter_5;ج");
+        pkg_al.add("aletter_6;ح");
+        pkg_al.add("aletter_7;خ");
+        pkg_al.add("aletter_8;د");
+        pkg_al.add("aletter_9;ذ");
+        pkg_al.add("aletter_10;ر");
+
+
+        Pkgs.put("aletters", pkg_al);
+
 
     }
 

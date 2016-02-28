@@ -58,7 +58,7 @@
 
 
             <TextView
-                android:id="@+id/v_fuces_txt"
+                android:id="@+id/c_chose_txt"
                 style="@style/subtitlegreen"
                 android:layout_below="@+id/imageView4"
 
@@ -173,15 +173,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            style="@style/nex_bt"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/row3"
-
-            android:onClick="GoNext" />
 
     </RelativeLayout>
 
