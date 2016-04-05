@@ -1,17 +1,15 @@
 <resources>
-    <string name="app_name">العاب ذكرة للجوال</string>
-    <string name="mem_number">ذكرة رقمية</string>
-    <string name="mem_images">ذكرة صورية</string>
-    <string name="welcome">مرحبا بك فى لعبه الذكرة</string>
-
-
+    <string name="app_name">العاب ذاكرة  للجوال</string>
+    <string name="mem_number">ذاكرة رقمية</string>
+    <string name="mem_images">ذاكرة صورية</string>
+    <string name="welcome">مرحبا بك فى لعبه الذاكرة</string>
     <string name="font_name_fontawesome">fontawesome</string>
     <string name="font_name_source_sans_pro">SourceSansPro</string>
     <string name="home">الرئيسية</string>
     <string name="fuces">ركز فى الارقام المعروضة</string>
     <string name="orderimages">أدخل الصور فى أماكنها</string>
     <string name="rightAns">أجايه صحيحه أحسنت .....</string>
-    <string name="wrongAns">لاسف أجابه غير صحيحة</string>
+    <string name="wrongAns">اسف أجابه غير صحيحة</string>
     <string name="results">النتيجه</string>
     <string name="wrongAnswer">الاجابات الخطا</string>
     <string name="rightAnswer">الاجابات الصحيحة</string>
@@ -19,8 +17,8 @@
     <string name="orderByright">الترتيب بواسطه الكتابه</string>
     <string name="orderbyMovie">الترتيب بواسطه التحريك</string>
     <string name="choseCategory">أختر الموضوع</string>
-    <string name="numbers">الارقم</string>
-    <string name="letters">الاحروف</string>
+    <string name="numbers">الارقام‎</string>
+    <string name="letters">الحروف‎</string>
     <string name="aletters">الحروف العربية</string>
     <string name="categories">الموضوعات</string>
 </resources>

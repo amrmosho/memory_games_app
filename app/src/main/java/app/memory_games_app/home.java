@@ -31,7 +31,14 @@ public class home extends AppCompatActivity {
     public void goToMoving(View view) {
 
         Intent t = new Intent(this, categories.class);
+
+
         t.putExtra("gametype", "moving");
+
+
+
+
+
         startActivity(t);
     }
 

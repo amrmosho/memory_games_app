@@ -23,8 +23,6 @@ public class view_items extends AppCompatActivity {
         setContentView(R.layout.activity_view_items);
 
         type = getIntent().getStringExtra("type");
-
-
         gametype = getIntent().getStringExtra("gametype");
 
 
@@ -34,9 +32,12 @@ public class view_items extends AppCompatActivity {
 
 
         game g = new game(this);
-        game.results.clear();
 
+
+        game.results.clear();
         game.rightAnswers.clear();
+
+
 
         g.addToImages(R.id.v_image_data_1);
         g.addToImages(R.id.v_image_data_2);

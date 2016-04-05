@@ -60,6 +60,8 @@ public class results extends AppCompatActivity {
     float wrongAnswers = 0f;
 
     void getresults() {
+
+
         for (boolean i : game.results) {
             if (i) {
                 rightAnswers++;

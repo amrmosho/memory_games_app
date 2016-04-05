@@ -21,9 +21,17 @@ public class game {
     public ArrayList<textobject> dtata_text = new ArrayList<>();
 
     public ArrayList<imageobject> images = new ArrayList<>();
+
+
+
     public ArrayList<imageobject> dropImages = new ArrayList<>();
 
+
+
     public   static ArrayList<String> rightAnswers = new ArrayList<>();
+
+
+
     public static ArrayList<Boolean> results = new ArrayList<>();
 
 
@@ -122,10 +130,14 @@ public class game {
 
 
         ArrayList<String> thispkg = Pkgs.get(type);
-        for (ImageView i : images) {
-            Random randomizer = new Random();
 
+        for (ImageView i : images) {
+
+
+            Random randomizer = new Random();
             int rindex = randomizer.nextInt(thispkg.size());
+
+
 
             String random = thispkg.get(rindex);
 
@@ -133,7 +145,13 @@ public class game {
             int myi = activity.getResources().getIdentifier(random.split(";")[0], "drawable", activity.getPackageName());
 
             rightAnswers.add(random.split(";")[1]);
+
+
+
             thispkg.remove(rindex);
+
+
+
             i.setImageResource(myi);
         }
     }
@@ -146,7 +164,9 @@ public class game {
 
 
             int myi = activity.getResources().getIdentifier(thispkg.get(index).split(";")[0], "drawable", activity.getPackageName());
+
             i.setImageResource(myi);
+
 
             i.setAnsid(thispkg.get(index).split(";")[0]);
             i.setAnsValue(thispkg.get(index).split(";")[1]);
@@ -160,11 +180,17 @@ public class game {
     public void updateTextResults() {
         int index = 0;
 
+
+
+
+
         for (textobject i : dtata_text) {
 
-            i.setAnsid(rightAnswers.get(index));
 
+
+            i.setAnsid(rightAnswers.get(index));
             i.setAnsValue("" + rightAnswers.get(index));
+
             index++;
 
 
@@ -175,6 +201,9 @@ public class game {
 
 
                         textobject me = (textobject) v;
+
+
+
 
                         if (me.getText().toString().equals(me.getAnsValue())) {
                             me.setBackgroundResource(R.drawable.right_text);
@@ -215,16 +244,25 @@ public class game {
 
     View movewobj = null;
 
-    private final class MyTouchListener implements View.OnTouchListener {
-        public boolean onTouch(View view, MotionEvent motionEvent) {
 
+            private final class MyTouchListener implements View.OnTouchListener {
+                public boolean onTouch(View view, MotionEvent motionEvent) {
 
             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+
+
+
                 ClipData data = ClipData.newPlainText("", "");
+
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+
+
+
                 view.startDrag(data, shadowBuilder, view, 0);
 
+
                 movewobj = view;
+
                 view.setVisibility(View.INVISIBLE);
 
                 return true;
@@ -260,6 +298,9 @@ public class game {
 
                         imageobject view = (imageobject) event.getLocalState();
 
+
+
+
                         //  String ansid = view.getAnsValue();
                         int myi = activity.getResources().getIdentifier(view.getAnsid(), "drawable", activity.getPackageName());
 
@@ -267,7 +308,13 @@ public class game {
                         imageobject myv = (imageobject) v;
 
                         myv.setBackgroundResource(myi);
+
+
                         view.setVisibility(View.INVISIBLE);
+
+
+
+
                         status = true;
 
 

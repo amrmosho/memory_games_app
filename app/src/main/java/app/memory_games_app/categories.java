@@ -19,6 +19,10 @@ public class categories extends AppCompatActivity {
         gametype = getIntent().getStringExtra("gametype");
 
 
+
+
+        
+
         view v = new view(this);
         v.updateFont(R.id.c_layout_title);
         v.updateFont(R.id.c_chose_txt);
@@ -53,8 +57,6 @@ public class categories extends AppCompatActivity {
     public void goHome(View view) {
 
         Intent t = new Intent(this, home.class);
-
-
         startActivity(t);
     }
 
