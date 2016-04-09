@@ -76,7 +76,7 @@
                 android:layout_marginRight="15dp"
                 android:layogoToMovingut_toLeftOf="@+id/imageView_h1"
                 android:layout_toStartOf="@+id/imageView_h1"
-                android:onClick=""
+                android:onClick="goToMoving"
 
                 android:text="@string/orderbyMovie"
 
