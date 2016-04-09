@@ -70,18 +70,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_centerVertical="true"
                 android:layout_gravity="right"
-                android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:layogoToMovingut_toLeftOf="@+id/imageView_h1"
-                android:layout_toStartOf="@+id/imageView_h1"
                 android:onClick="goToMoving"
 
                 android:text="@string/orderbyMovie"
 
 
-                />
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/imageView_h1" />
 
             <ImageView
                 android:id="@+id/imageView_h1"
