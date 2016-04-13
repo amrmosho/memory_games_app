@@ -1,9 +1,15 @@
 package app.memory_games_app;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import app.memory_games_app.libs.game;
 import app.memory_games_app.libs.view;
@@ -19,6 +25,9 @@ public class order_images extends AppCompatActivity {
         view v = new view(this);
         v.updateFont(R.id.o_order_txt);
         v.updateFont(R.id.o_layout_title);
+
+
+        final ProgressBar mProgressBar =(ProgressBar) findViewById(R.id.progressBar);
 
 
         String type = getIntent().getStringExtra("type");
@@ -51,15 +60,34 @@ public class order_images extends AppCompatActivity {
         g.fillImages(type);
 
         g.setdeage();
+
+        new CountDownTimer(30000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                mProgressBar.setProgress ((int)Math.round( millisUntilFinished * 100.0/30000));
+            }
+            public void onFinish() {
+
+                goNext ();
+
+            }
+        }.start();
+
     }
 
     public void goNext(View view) {
 
+        goNext ();
+
+    }
+
+
+    void goNext (){
 
         Intent t = new Intent(this, results.class);
 
 
         startActivity(t);
+
     }
     public void goHome(View view) {
 
@@ -69,3 +97,4 @@ public class order_images extends AppCompatActivity {
         startActivity(t);
     }
 }
+

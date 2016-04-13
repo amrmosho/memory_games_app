@@ -238,6 +238,17 @@
 
             />
 
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+
+            android:max="100"
+            android:progress="0"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/imageButton" />
+
     </RelativeLayout>
 
 </RelativeLayout>

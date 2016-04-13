@@ -2,6 +2,7 @@ package app.memory_games_app.libs;
 
 import android.app.Activity;
 import android.content.ClipData;
+import android.media.MediaPlayer;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,6 +40,10 @@ public class game {
     Activity activity;
 
 
+
+
+
+
     public game(Activity activity) {
         this.activity = activity;
         updatePks();
@@ -54,6 +59,8 @@ public class game {
 
 
     }
+
+
 
     public void addToImages(int id) {
 
@@ -203,13 +210,14 @@ public class game {
                         textobject me = (textobject) v;
 
 
-
-
                         if (me.getText().toString().equals(me.getAnsValue())) {
                             me.setBackgroundResource(R.drawable.right_text);
+                            playsound(R.raw.correct_answer);
                             results.add(true);
                         } else {
                             results.add(false);
+
+                            playsound(R.raw.wrong_answer);
                             me.setBackgroundResource(R.drawable.wrong_text);
 
 
@@ -225,7 +233,13 @@ public class game {
 
 
     }
+    public void playsound(int id){
 
+
+        MediaPlayer m= MediaPlayer.create( this.activity ,id);
+        m.start();
+
+    }
     public void setdeage() {
         int index = 0;
         for (ImageView i : images) {
@@ -320,13 +334,13 @@ public class game {
 
                         if (myv.getAnsValue().equals(view.getAnsValue())) {
                             Toast.makeText(activity, R.string.rightAns, Toast.LENGTH_SHORT).show();
-
+ playsound(R.raw.correct_answer);
                             myv.setImageResource(R.drawable.right_image);
                             results.add(true);
                         } else {
                             Toast.makeText(activity, R.string.wrongAns, Toast.LENGTH_SHORT).show();
                             results.add(false);
-
+                            playsound(R.raw.wrong_answer);
                             myv.setImageResource(R.drawable.wrong_image);
 
                         }
